@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150201195632) do
     t.integer  "floor"
     t.integer  "rooms"
     t.integer  "price"
+    t.datetime "added_at"
     t.boolean  "makler"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

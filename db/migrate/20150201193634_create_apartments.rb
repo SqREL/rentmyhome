@@ -9,6 +9,8 @@ class CreateApartments < ActiveRecord::Migration
       t.integer :rooms
       t.integer :price
 
+      t.datetime :added_at
+
       t.boolean :makler
 
       t.timestamps null: false
