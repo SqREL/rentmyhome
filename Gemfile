@@ -34,6 +34,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sidekiq', '~> 3.3.1'
 gem 'sidetiq', '~> 0.6.3'
+gem 'httparty'
+
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'haml'
+gem 'haml-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,3 +52,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+group :development do
+  gem 'pry-rails'
+end

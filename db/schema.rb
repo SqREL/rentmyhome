@@ -23,16 +23,17 @@ ActiveRecord::Schema.define(version: 20150201195632) do
   add_index "apartment_photos", ["apartment_photo_id"], name: "index_apartment_photos_on_apartment_photo_id"
 
   create_table "apartments", force: :cascade do |t|
-    t.string   "service",    null: false
-    t.string   "url",        null: false
-    t.string   "title",      null: false
+    t.string   "service",     null: false
+    t.string   "url",         null: false
+    t.string   "title",       null: false
+    t.text     "description"
     t.integer  "floor"
     t.integer  "rooms"
     t.integer  "price"
-    t.datetime "added_at"
+    t.string   "added_at"
     t.boolean  "makler"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "apartments", ["url"], name: "index_apartments_on_url", unique: true

@@ -4,12 +4,13 @@ class CreateApartments < ActiveRecord::Migration
       t.string :service, null: false
       t.string :url, null: false
       t.string :title, null: false
+      t.text :description
 
       t.integer :floor
       t.integer :rooms
       t.integer :price
 
-      t.datetime :added_at
+      t.string :added_at
 
       t.boolean :makler
 
