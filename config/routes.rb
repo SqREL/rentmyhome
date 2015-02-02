@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :apartments, only: :index do
+    get :refresh, on: :collection
+  end
+  root 'apartments#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
