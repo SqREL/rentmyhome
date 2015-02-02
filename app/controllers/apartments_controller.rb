@@ -1,6 +1,6 @@
 class ApartmentsController < ApplicationController
   def index
-    @apartments = Apartment.all
+    @apartments = Apartment.all.order('created_at')
   end
 
   def refresh

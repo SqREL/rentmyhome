@@ -3,12 +3,12 @@ class Apartment < ActiveRecord::Base
   validates :url, :title, :description, presence: true
 
   def self.pushbullet
-    @pushbullet ||= Washbullet::Client.new('ThL3JwSsqySe1pVu0Tak1jJPey3ds1Yr')
+    @pushbullet ||= Washbullet::Client.new(ENV["WASHBULLET_KEY"])
   end
 
   def self.refresh
     olx = AdCrawler::OLX::Parser.new.parse!
-    olx.each do |ad|
+    olx.reverse.each do |ad|
       apartment = Apartment.new(ad.to_param)
       apartment.notify if apartment.save
     end

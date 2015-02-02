@@ -41,6 +41,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-generators', '~> 3.3.1'
 gem 'washbullet'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
