@@ -1,0 +1,10 @@
+%h1 Apartments
+
+- @apartments.each do |apartment|
+  .col-lg-12
+    %h3= link_to "#{apartment.title} (#{apartment.service})", apartment.url
+    %h5 Price: #{apartment.price} #{apartment.currency}
+    %p= simple_format apartment.description
+
+%br
+
