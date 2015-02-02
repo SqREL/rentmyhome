@@ -40,6 +40,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-generators', '~> 3.3.1'
+gem 'washbullet'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
