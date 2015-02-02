@@ -32,7 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'sinatra', :require => nil
 gem 'sidekiq', '~> 3.3.1'
+gem 'sidekiq-failures'
 gem 'sidetiq', '~> 0.6.3'
 gem 'httparty'
 
