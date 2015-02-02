@@ -20,4 +20,24 @@ class AdCrawler::OLX::Result
   def url
     json[:url]
   end
+
+  def price
+    json[:list_label_ad].scan(/\d/).join('')
+  end
+
+  def currency
+    currency = json[:list_label_ad].match(/\$/) ? 'USD' : 'UAH'
+  end
+
+  def to_param
+    {
+      added_at: added_at,
+      title: title,
+      description: description,
+      url: url,
+      price: price,
+      currency: currency,
+      service: 'OLX.ua'
+    }
+  end
 end

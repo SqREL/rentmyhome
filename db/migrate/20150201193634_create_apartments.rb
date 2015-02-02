@@ -4,6 +4,7 @@ class CreateApartments < ActiveRecord::Migration
       t.string :service, null: false
       t.string :url, null: false
       t.string :title, null: false
+      t.string :currency
       t.text :description
 
       t.integer :floor

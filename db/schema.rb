@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150201195632) do
     t.string   "service",     null: false
     t.string   "url",         null: false
     t.string   "title",       null: false
+    t.string   "currency"
     t.text     "description"
     t.integer  "floor"
     t.integer  "rooms"
