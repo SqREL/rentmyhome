@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/seuros/capistrano-sidekiq.git
+  revision: 77573c4ba99272226bff35a15d1126321106396f
+  specs:
+    capistrano-sidekiq (0.4.1)
+      capistrano
+      sidekiq
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,10 +48,27 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    bundler-audit (0.3.1)
+      bundler (~> 1.2)
+      thor (~> 0.18)
     byebug (3.5.1)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capistrano-colorized-stream (0.2.3)
+      capistrano (~> 2)
+      colorize
+    capistrano-unicorn (0.2.0)
+      capistrano (< 3.0)
+    capistrano_colors (0.5.5)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -51,7 +76,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.0)
+    colorize (0.7.5)
     columnize (0.9.0)
+    connection_pool (2.1.1)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
@@ -59,7 +86,9 @@ GEM
     execjs (2.2.2)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
+    highline (1.6.21)
     hike (1.2.3)
+    hitimes (1.2.2)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -69,6 +98,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.2)
+    kgio (2.9.3)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -77,8 +107,16 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.10.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.2)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    open4 (1.3.4)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -106,9 +144,17 @@ GEM
       activesupport (= 4.2.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.13.0)
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    recap (1.2.2)
+      capistrano (~> 2.9)
+      open4
+      thor
+    redis (3.2.0)
+    redis-namespace (1.5.1)
+      redis (~> 3.0, >= 3.0.4)
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -135,6 +181,12 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sidekiq (3.3.1)
+      celluloid (>= 0.16.0)
+      connection_pool (>= 2.1.1)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -147,9 +199,12 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
+    sushi (0.0.4)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    timers (4.0.1)
+      hitimes
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -157,6 +212,10 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     web-console (2.0.0)
       activemodel (~> 4.0)
       binding_of_caller (>= 0.7.2)
@@ -167,16 +226,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler-audit
   byebug
+  capistrano (~> 2.0)
+  capistrano-colorized-stream
+  capistrano-sidekiq!
+  capistrano-unicorn
+  capistrano_colors
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.0)
+  recap (~> 1.2)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
   sqlite3
+  sushi
   turbolinks
   uglifier (>= 1.3.0)
+  unicorn
   web-console (~> 2.0)
