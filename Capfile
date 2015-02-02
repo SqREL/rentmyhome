@@ -13,13 +13,13 @@ server '178.62.251.65', :web, :app, :db, primary: true
 
 set :domain_name,     'rentmyhome.pp.ua'
 set :ruby_version,    '2.2.0'
-set :application,     'customfeed'
+set :application,     'rentmyhome'
 set :repository,      'git@github.com:SqREL/rentmyhome.git'
 set(:user)            { application }
 
 #== Multistage
-set :stages, %w(production staging)
-set :default_stage, 'staging'
+set :stages, %w(production)
+set :default_stage, 'production'
 require 'capistrano/ext/multistage'
 
 
